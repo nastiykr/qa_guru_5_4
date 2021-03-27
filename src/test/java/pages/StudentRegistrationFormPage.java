@@ -26,7 +26,6 @@ public class StudentRegistrationFormPage {
     private String year = new SimpleDateFormat("yyyy").format(dateOfBirth);
     private String subject = "Social Studies";
     private String hobby = "Music";
-    private String photoPath = "src/test/resources/photo.jpeg";
     private String photoName = "photo.jpeg";
     private String address = faker.address().fullAddress();
     private String state = "Haryana";
@@ -55,7 +54,7 @@ public class StudentRegistrationFormPage {
 
         $(byText(hobby)).click();
 
-        $("#uploadPicture").uploadFile(new File(photoPath));
+        $("#uploadPicture").uploadFromClasspath(photoName);   //$("#uploadPicture").uploadFile(new File("src/test/resources/photo.jpeg"));
 
         $("#currentAddress").setValue(address);
 
